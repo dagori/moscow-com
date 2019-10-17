@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="">
+    <title>Moskovsky Komsomolets</title>
+    <link href="build/css/style.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  <button class="registration-button" type="button">Регистрация</button>
+  <div class="overlay"></div>
+  <div class="reg-popup">
+    <h2 class="reg-popup__title">Регистрация</h2>
+    <button class="reg-popup__close" aria-label="Закрыть форму регистрации" type="button"></button>
+    <form class="reg-form" method="post" action="#" autocomplete="off" name="reg-form">
+      <section class="reg-form__required">
+        <div class="reg-form__block reg-form__block--email">
+          <label class="reg-form__label reg-form__label--email" for="email">E-mail</label>
+          <input class="reg-form__field reg-form__field--email" id="email" type="email" name="email" value="" required pattern="([.a-zA-Z0-9_-]{1,})@([а-яА-Яa-z0-9-]{1,}).([а-яА-Яa-zA-Z]{2,6})">
+          <div class="form-requirement form-requirement--email">
+            <ul class="form-requirement__rule-block"></ul>
+            <span class="form-requirement__error">Введите e-mail в правильном формате</span>
+          </div>
+        </div>
+        <div class="reg-form__block reg-form__block--name">
+          <label class="reg-form__label reg-form__label--name" for="nick-name">Никнейм</label>
+          <input class="reg-form__field reg-form__field--name" id="nick-name" type="text" name="name" value="" required pattern="([a-zA-Z][a-zA-Z0-9_;]{2,40})" minlength="3" maxlength="40" size="40">
+          <div class="form-requirement form-requirement--name">
+            <h3 class="form-requirement__title">Никнейм должен содержать:</h3>
+            <ul class="form-requirement__rule-block">
+              <li class="form-requirement__rule">от 3 до 40 символов</li>
+              <li class="form-requirement__rule">только латинские буквы, цифры или символы (; _)</li>
+              <li class="form-requirement__rule">никнейм может начинаться только с буквы</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reg-form__block reg-form__block--password-1">
+          <label class="reg-form__label reg-form__label--password-1" for="password-1">Пароль</label>
+          <input class="reg-form__field reg-form__field--password-1" id="password-1" type="password" name="password-1" value="" required pattern="((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,32})" minlength="6" maxlength="32" size="32">
+          <div class="form-requirement form-requirement--password-1">
+            <h3 class="form-requirement__title">Пароль должен содержать:</h3>
+            <ul class="form-requirement__rule-block">
+              <li class="form-requirement__rule">от 6 до 32 символов</li>
+              <li class="form-requirement__rule">цифру</li>
+              <li class="form-requirement__rule">заглавную и строчную буквы</li>
+            </ul>
+            <span class="form-requirement__error">Пароль не должен совпадать с Никнеймом</span>
+          </div>
+        </div>
+        <div class="reg-form__block reg-form__block--password-2">
+          <label class="reg-form__label reg-form__label--password-2" for="password-2">Пароль ещё раз</label>
+          <input class="reg-form__field reg-form__field--password-2" id="password-2" type="password" name="password-2" value="" required  minlength="6" maxlength="32" size="32">
+          <div class="form-requirement form-requirement--password-2">
+            <ul class="form-requirement__rule-block"></ul>
+            <span class="form-requirement__error">Пароли не совпадают</span>
+          </div>
+        </div>
+        <div class="reg-form__block reg-form__block--agreement">
+          <input class="reg-form__checkbox reg-form__checkbox--agreement" id="agreement" type="checkbox" name="agreement" required>
+          <label class="reg-form__label reg-form__label--agreement" for="agreement" tabindex="0">Я принимаю условия</label> <a href="#" class="reg-form__agreement" aria-label="Перейти на страницу Пользовательского соглашения">Пользовательского соглашения</a>
+        </div>
+        <button class="reg-form__next" disabled>Далее</button>
+      </section>
+      <section class="reg-form__optional">
+        <div class="reg-form__block reg-form__block--sex">
+          <span class="reg-form__label reg-form__label--sex">Ваш пол: </span>
+
+          <input class="reg-form__radio" id="man" type="radio" name="sex" tabindex="-1" value="male">
+          <label class="reg-form__mark" for="man" tabindex="0">мужской</label>
+
+          <input class="reg-form__radio" id="woman" type="radio" name="sex" tabindex="-1" value="female">
+          <label class="reg-form__mark" for="woman" tabindex="0">женский</label>
+        </div>
+        <div class="reg-form__block reg-form__block--education">
+          <span class="reg-form__label reg-form__label--education">Вашe образование: </span>
+          <input class="reg-form__radio reg-form__radio--education" id="unfinished-middle" type="radio" name="education" value="незаконченное среднее">
+          <label class="reg-form__mark" for="unfinished-middle" tabindex="0">незаконченное среднее</label>
+
+          <input class="reg-form__radio reg-form__radio--education" id="middle" type="radio" name="education" value='среднее'>
+          <label class="reg-form__mark" for="middle" tabindex="0">среднее</label>
+
+          <input class="reg-form__radio reg-form__radio--education" id="unfinished-hight" type="radio" name="education" value="незаконченное высшее">
+          <label class="reg-form__mark" for="unfinished-hight" tabindex="0">незаконченное высшее</label>
+
+          <input class="reg-form__radio reg-form__radio--education" id="hight" type="radio" name="education" value="высшее">
+          <label class="reg-form__mark" for="hight" tabindex="0">высшее</label>
+
+          <input class="reg-form__radio reg-form__radio--education" id="academic-degree" type="radio" name="education" value="ученая степень">
+          <label class="reg-form__mark" for="academic-degree" tabindex="0">ученая степень</label>
+        </div>
+        <div class="reg-form__block reg-form__block--about">
+          <span class="reg-form__label reg-form__label--about">Расскажите о себе</span>
+          <textarea class="reg-form__field reg-form__field--about" name="aboutUser"></textarea>
+        </div>
+        <div class="reg-form__block reg-form__block--subscription">
+          <span class="reg-form__label reg-form__label--subscription">Оформите подписку на рубрики</span>
+
+          <input class="reg-form__checkbox reg-form__checkbox--subscription" id="news" type="checkbox" name="subscription" value="Новости">
+          <label class="reg-form__mark" for="news" tabindex="0">Новости</label>
+
+          <input class="reg-form__checkbox reg-form__checkbox--subscription" id="policy" type="checkbox" name="subscription" value="Политика">
+          <label class="reg-form__mark" for="policy" tabindex="0">Политика</label>
+
+          <input class="reg-form__checkbox reg-form__checkbox--subscription" id="economics" type="checkbox" name="subscription" value="Экономика">
+          <label class="reg-form__mark" for="economics" tabindex="0">Экономика</label>
+
+          <input class="reg-form__checkbox reg-form__checkbox--subscription" id="accidents" type="checkbox" name="subscription" value="Происшествия">
+          <label class="reg-form__mark" for="accidents" tabindex="0">Происшествия</label>
+
+          <input class="reg-form__checkbox reg-form__checkbox--subscription" id="social" type="checkbox" name="subscription" value="Общество">
+          <label class="reg-form__mark" for="social" tabindex="0">Общество</label>
+
+          <input class="reg-form__checkbox reg-form__checkbox--subscription" id="sport" type="checkbox" name="subscription" value="Спорт">
+          <label class="reg-form__mark" for="sport" tabindex="0">Спорт</label>
+
+          <input class="reg-form__checkbox reg-form__checkbox--subscription" id="culture" type="checkbox" name="subscription" value="Культура">
+          <label class="reg-form__mark" for="culture" tabindex="0">Культура</label>
+
+          <input class="reg-form__checkbox reg-form__checkbox--subscription" id="science" type="checkbox" name="subscription" value="Наука">
+          <label class="reg-form__mark" for="science" tabindex="0">Наука</label>
+
+          <input class="reg-form__checkbox reg-form__checkbox--subscription" id="car" type="checkbox" name="subscription" value="Авто">
+          <label class="reg-form__mark" for="car" tabindex="0">Авто</label>
+        </div>
+        <button class="reg-form__submit" type="submit">Зарегистрироваться</button>
+      </section>
+    </form>
+  </div>
+  <script src="build/js/script.min.js"></script>
+  </body>
+</html>

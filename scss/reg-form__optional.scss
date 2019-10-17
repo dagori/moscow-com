@@ -1,0 +1,50 @@
+.reg-form__mark {
+  position: relative;
+  padding-left: 20px;
+  color: $color-text-dark;
+  font-family: 'Roboto';
+  font-size: 13px;
+  margin: 15px 10px 5px 0;
+}
+
+.reg-form__radio + .reg-form__mark::before {
+  @include pseudo-checkbox;
+  border-radius: 50%;
+}
+
+.reg-form__checkbox + .reg-form__mark::before {
+  @include pseudo-checkbox;
+}
+
+.reg-form__checkbox:checked + .reg-form__mark::before {
+    border: 1px solid $color-element-dark;
+    background: url('../images/checkbox.svg') center / contain no-repeat $color-element-dark;
+}
+
+.reg-form__radio:checked + .reg-form__mark::before {
+    border: 1px solid $color-element-dark;
+    background: url('../images/checkbox.svg') center / contain no-repeat $color-element-dark;
+}
+
+.reg-form__optional {
+  display: none;
+  flex-direction: column;
+  min-height: 598px;
+  .reg-form__block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .reg-form__label {
+    width: 100%;
+  }
+  .reg-form__field {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+  }
+  .reg-form__submit {
+    margin-top: auto;
+  }
+}

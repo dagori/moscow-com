@@ -1,0 +1,50 @@
+// Согласие с условиями
+.reg-form__block--agreement {
+  display: block;
+}
+
+.reg-form__label--agreement {
+  position: relative;
+  padding-left: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  a {
+   color: $color-element-dark;
+  }
+  &::before {
+    @include pseudo-checkbox;
+  }
+}
+
+.reg-form__label--agreement:hover,
+.reg-form__label--agreement:focus  {
+  &::before {
+    border: 1px solid $color-element-dark;
+  }
+}
+
+.reg-form__checkbox:checked + .reg-form__label::before {
+    border: 1px solid $color-element-dark;
+    background: url('../images/checkbox.svg') center / contain no-repeat $color-element-dark;
+}
+  // &::after { //убрать это и добавить бэкграунд
+  //   content: '✓';
+  //   position: absolute;
+  //   width: 12px;
+  //   height: 12px;
+  //   left: 2px;
+  //   top: -3px;
+  //   font-size: 13px;
+  //   font-weight: bold;
+  //   color: $color-text-light;
+  // }
+
+.reg-form__agreement {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  &:focus, &:hover {
+    text-decoration: underline;
+  }
+}

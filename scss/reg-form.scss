@@ -1,0 +1,45 @@
+//Форма
+.reg-form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.reg-form__block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.reg-form__block:first-of-type {
+  margin-top: 0;
+}
+
+.reg-form__field {
+  border: 1px solid $color-element-light;
+  margin-top: 10px;
+  padding: 12px 20px;
+  &:focus {
+    border: 1px solid $color-element-focus;
+  }
+  &.error {
+    border: 1px solid $color-rule-error;
+  }
+}
+
+.reg-form__label {
+  font-family: 'Roboto Bold', sans-serif;
+  font-size: 14px;
+  color: $color-text-dark;
+}
+
+.reg-form__checkbox, .reg-form__radio {
+  display: none;
+}
+
+.reg-form__next,
+.reg-form__submit {
+  @include button-style;
+  display: block;
+  margin: 0 auto;
+}
