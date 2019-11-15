@@ -16,7 +16,7 @@ nextButton.addEventListener('click', (e) => {
 });
 
 function changeButtonAccess() {
-  var status = Array.from(fields).every(item => item.validity.valid);
+  var status = [].every.call(fields, item => item.validity.valid);
   if(status) {
     nextButton.disabled = false;
   } else {
